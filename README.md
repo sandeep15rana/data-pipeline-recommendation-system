@@ -1,4 +1,4 @@
-# Data Pipeline Recommendatio System
+# Data Pipeline Recommendation System
 ---
 
 ## 1. Executive Summary
