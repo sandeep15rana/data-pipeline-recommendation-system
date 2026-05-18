@@ -68,13 +68,13 @@ Python version: 3.12.7 (tags/v3.12.7:0b05ead, Oct  1 2024, 03:06:41) [MSC v.1941
 ✅ matplotlib 3.8.2
 ✅ seaborn 0.13.2
 
-### System Requirement
+## System Requirement
 
 OS   : Windows 10/11
 RAM  : 8GB
 Space: 10GB space
-
-### Step for Implementation
+---
+## Step for Implementation
 
 Step 0: Environment Setup 
 
@@ -84,17 +84,19 @@ python -m venv recommender_env
 
 # Make sure your virtual environment is activated
 recommender_env\Scripts\activate
-
+---
 # Step 1: Packages Installation:
 
--> pip install pandas==2.2.0 numpy==1.26.3 scipy==1.12.0 scikit-learn==1.5.0 matplotlib==3.8.2 seaborn==0.13.2 pyarrow==16.0.0 tqdm==4.66.2 pyyaml==6.0.1 requests==2.31.0 joblib==1.4.0 python-dateutil==2.8.2 pytz==2024.1
+pip install pandas==2.2.0 numpy==1.26.3 scipy==1.12.0 scikit-learn==1.5.0 matplotlib==3.8.2 seaborn==0.13.2 pyarrow==16.0.0 tqdm==4.66.2 pyyaml==6.0.1 requests==2.31.0 joblib==1.4.0 python-dateutil==2.8.2 pytz==2024.1
+
+---
 
 # Step 2: Verify Installation
 
 # Run verification
 python -c "import pandas, numpy, sklearn, matplotlib, seaborn; print('✅ All packages ready!')"
 
--> python verify_py312.py
+python verify_py312.py
 
 Python version: 3.12.7 (tags/v3.12.7:0b05ead, Oct  1 2024, 03:06:41) [MSC v.1941 64 bit (AMD64)]
 ✅ pandas 2.1.1
@@ -104,6 +106,7 @@ Python version: 3.12.7 (tags/v3.12.7:0b05ead, Oct  1 2024, 03:06:41) [MSC v.1941
 ✅ matplotlib 3.8.2
 ✅ seaborn 0.13.2
 
+---
 
 # Step 3: Create Project Directory Structure
 
@@ -126,7 +129,7 @@ mkdir 09_Model_Training_Evaluation\scripts 2>nul
 mkdir 09_Model_Training_Evaluation\model_artifacts 2>nul
 mkdir 09_Model_Training_Evaluation\mlflow_outputs 2>nul
 
-
+---
 # Step 4: python verify_py312.py
 Python version: 3.12.7 (tags/v3.12.7:0b05ead, Oct  1 2024, 03:06:41) [MSC v.1941 64 bit (AMD64)]
 ✅ pandas 2.1.1
@@ -137,10 +140,12 @@ Python version: 3.12.7 (tags/v3.12.7:0b05ead, Oct  1 2024, 03:06:41) [MSC v.1941
 ✅ seaborn 0.13.2
 
 🎉 Environment is ready for Python 3.12!
+----
 
 # Step 5: Data generation
 
--> python data_generator.py
+python data_generator.py
+
 ==================================================
 RecoMart Data Generator
 ==================================================
@@ -156,10 +161,11 @@ Generated 10000 interactions with 200 missing ratings
 ✅ Saved products to: data\raw_input\products_20260516_224216.csv
 
 ✨ Data generation complete!
+---
 
 # Step 6: Data Ingestion
 
--> python 02_Data_Collection_Ingestion\scripts\ingest_data.py
+python 02_Data_Collection_Ingestion\scripts\ingest_data.py
 🔄 Starting Data Ingestion...
 ==================================================
 2026-05-16 22:43:02,045 - INFO - Reading data from data\raw_input\interactions_20260516_224216.csv
@@ -190,10 +196,10 @@ Arguments: ()
 
 ✅ All ingestion tasks completed successfully!
 
-
+---
 # Step 7: Data Quality Check
 
--> python 04_Data_Profiling_Validation\scripts\generate_quality_report.py
+python 04_Data_Profiling_Validation\scripts\generate_quality_report.py
 Generating Data Quality Report...
 ✅ Quality report saved to 04_Data_Profiling_Validation\data_quality_report.json
 
@@ -230,9 +236,10 @@ QUALITY REPORT SUMMARY
   ]
 }
 
+---
 # Step 8: Model Training
 
--> python 09_Model_Training_Evaluation\scripts\train_model.py
+python 09_Model_Training_Evaluation\scripts\train_model.py
 🤖 Starting Model Training...
 ==================================================
 INFO:__main__:Loaded user features: 200 users
@@ -244,8 +251,10 @@ INFO:__main__:✅ Model saved to 09_Model_Training_Evaluation\model_artifacts\re
    Model saved to: 09_Model_Training_Evaluation\model_artifacts\recommendation_model_20260516_224437.pkl
    RMSE: 0.85
 
+---
 # Step 9: Run end to end pipeline 
 
 python run_pipeline.py
 
+---
 Thanks!!
